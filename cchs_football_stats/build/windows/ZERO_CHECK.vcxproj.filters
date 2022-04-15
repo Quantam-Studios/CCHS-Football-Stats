@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\minec\Documents\FootballStatApp\MainApp\cchs_football_stats\build\windows\CMakeFiles\714c6caba9e6e8433c22c4ddacfb94c2\generate.stamp.rule">
+    <CustomBuild Include="C:\Users\minec\Documents\FootballStatApp\MainApp\CCHS-Football-Stats\cchs_football_stats\build\windows\CMakeFiles\5100b56b58b99bf9c72f83be23a937e7\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{1D9F5EFB-9170-302F-84FF-E3B008CB785F}</UniqueIdentifier>
+      <UniqueIdentifier>{6EF0B377-8554-3B72-9257-14BF93C8FD8F}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
