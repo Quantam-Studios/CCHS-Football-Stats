@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/minec/Documents/FootballStatApp/MainApp/cchs_football_stats/windows/flutter
+# Install script for directory: C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/windows/flutter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

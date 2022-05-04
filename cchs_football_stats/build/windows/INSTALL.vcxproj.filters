@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\minec\Documents\FootballStatApp\MainApp\cchs_football_stats\build\windows\CMakeFiles\714c6caba9e6e8433c22c4ddacfb94c2\INSTALL_force.rule">
+    <CustomBuild Include="C:\Users\anima\OneDrive\Documents\GitHub\CCHS-Football-Stats\cchs_football_stats\build\windows\CMakeFiles\3835b45b7309180d7ee2e1963fdcec4a\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{1D9F5EFB-9170-302F-84FF-E3B008CB785F}</UniqueIdentifier>
+      <UniqueIdentifier>{78853CF3-E967-3F71-AF92-CB6E6E69A0B5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

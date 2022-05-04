@@ -13,7 +13,7 @@ class Season extends HiveObject {
   // Games
   // this holds all relevant games in the season
   @HiveField(1)
-  late List<Game> games;
+  List<Game> games = [];
   // Total Game Count
   @HiveField(2)
   late int totalGames;
