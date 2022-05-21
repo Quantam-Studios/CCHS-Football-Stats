@@ -428,6 +428,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "side_navigation",
+      "rootUri": "file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/side_navigation-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///C:/tools/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -548,7 +554,7 @@
       "languageVersion": "2.15"
     }
   ],
-  "generated": "2022-05-21T19:57:49.238722Z",
+  "generated": "2022-05-21T21:43:53.143323Z",
   "generator": "pub",
   "generatorVersion": "2.15.1"
 }

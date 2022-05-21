@@ -1,15 +1,16 @@
-import 'dart:ffi';
+// General
 import 'dart:io';
-import 'dart:typed_data';
-import 'package:cchs_football_stats/models/game.dart';
-import 'package:cchs_football_stats/models/combo.dart';
-import 'package:excel/excel.dart';
-import 'package:file_picker/file_picker.dart';
-import 'package:cchs_football_stats/models/season.dart';
 import 'package:flutter/material.dart';
+// Side Bar
+import 'package:side_navigation/side_navigation.dart';
+// Class References
 import './models/game.dart';
 import './models/season.dart';
-import 'dart:async';
+import './models/combo.dart';
+// Excel Reading
+import 'package:excel/excel.dart';
+import 'package:file_picker/file_picker.dart';
+import 'dart:typed_data';
 
 void main() {
   runApp(const MyApp());
@@ -23,6 +24,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      // General Styling
+      // Text Color White
       theme: ThemeData(
         primarySwatch: Colors.grey,
         textTheme: const TextTheme(
@@ -54,12 +57,16 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+// MAIN DYNAMIC CLASS OF THE APP
+// The currently selected index of the bar
+int selectedIndex = 0;
+
 class _MyHomePageState extends State<MyHomePage> {
   List<Season> seasons = <Season>[];
   List<String> theLetters = <String>[];
 
   int getCurrentSeason() {
-    if (seasons.length != 0) {
+    if (seasons.isNotEmpty) {
       for (int x = seasons.length - 1; x < 0; x--) {
         String year = seasons[x].years;
         if (year == DateTime.now().year.toString()) {
@@ -74,39 +81,99 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // PAGES
+    // only a list of page classes.
+    // all pages should be separate scripts.
+    List<Widget> views = const [
+      // HISTORY
+      Center(
+        child: Text('History'),
+      ),
+      // PLAY BOOK
+      Center(
+        child: Text('Play Book'),
+      ),
+      // PREDICTIONS
+      Center(
+        child: Text('Predictions'),
+      ),
+    ];
+
     return Scaffold(
       backgroundColor: const Color(0xFF172226),
-      // TOP NAVIGATION
-      appBar: AppBar(
-        backgroundColor: const Color(0xFF20343B),
-        title: Text(
-          widget.title,
-          style: const TextStyle(color: Colors.white),
-        ),
-      ),
+      // The row is needed to display the current page
+      // The mechanics are similar to the Flutter BottomNavigationBar()
+      body: Row(
+        children: [
+          SideNavigationBar(
+            selectedIndex: selectedIndex,
+            items: const [
+              SideNavigationBarItem(
+                icon: Icons.history_edu_rounded,
+                label: 'History',
+              ),
+              SideNavigationBarItem(
+                icon: Icons.menu_book_rounded,
+                label: 'Play Book',
+              ),
+              SideNavigationBarItem(
+                icon: Icons.query_stats_rounded,
+                label: 'Predictions',
+              ),
+            ],
+            toggler: SideBarToggler(
+              expandIcon: Icons.keyboard_arrow_left_rounded,
+              shrinkIcon: Icons.keyboard_arrow_right_rounded,
+              onToggle: () {},
+            ),
+            theme: SideNavigationBarTheme(
+              backgroundColor: const Color(0xFF121b1f),
+              togglerTheme: const SideNavigationBarTogglerTheme(
+                  expandIconColor: Colors.grey, shrinkIconColor: Colors.grey),
+              itemTheme: SideNavigationBarItemTheme.standard(),
+              dividerTheme: SideNavigationBarDividerTheme.standard(),
+            ),
+            onTap: (index) {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+          ),
 
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xFF5a8696),
-        onPressed: () {
-          pickFile();
-        },
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
+          /// Make it take the rest of the available width
+          Expanded(
+            child: views.elementAt(selectedIndex),
+          )
+        ],
       ),
     );
   }
 
+// SAVED FOR LATER DO NOT DELETE
+// floatingActionButton: FloatingActionButton(
+//         backgroundColor: const Color(0xFF5a8696),
+//         onPressed: () {
+//           pickFile();
+//         },
+//         child: const Icon(
+//           Icons.add,
+//           color: Colors.white,
+//         ),
+//       ),
+
+// FILE READING
+//IMPORTANT: needs to be moved to a separate script and made reference-able by pages.
   pickFile() async {
     FilePickerResult? file = await FilePicker.platform.pickFiles(
       type: FileType.custom,
+      // ensures excel files only can be added
       allowedExtensions: ['xlsx', 'xls'],
       withData: true,
     );
-    //withReadStream: true); // makes a file picker window
-    if (file == null) return; // checks if you selected a file
-
+    // withReadStream: true); // makes a file picker window
+    // checks if you selected a file
+    if (file == null) return;
+    //IMPORTANT: this will only work if it exists, but it's not already made yet
     Directory directory = Directory("This PC/Documents/football games");
 
     print(directory.path.isEmpty);
