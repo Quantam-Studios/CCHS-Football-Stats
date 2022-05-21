@@ -83,18 +83,17 @@ class _MyHomePageState extends State<MyHomePage> {
           widget.title,
           style: const TextStyle(color: Colors.white),
         ),
-        leading: IconButton(
-            onPressed: () {
-              pickFile();
-            },
-            icon: const Text("+",
-                style: TextStyle(
-                    color: Color.fromARGB(192, 224, 9, 9), fontSize: 30))),
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
+        backgroundColor: const Color(0xFF5a8696),
+        onPressed: () {
+          pickFile();
+        },
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
       ),
     );
   }
@@ -122,7 +121,6 @@ class _MyHomePageState extends State<MyHomePage> {
     //theByteCode.forEach( => (int));
     //print("this is the byte code");
     //print(theFile.bytes);
-    String theFileName = theFile.name;
     Game game = Game(); // makes a new game
     game.combos = [];
     int currentSeasonIndex = getCurrentSeason();
