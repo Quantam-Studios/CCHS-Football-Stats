@@ -1,4 +1,5 @@
 import 'dart:ffi';
+import 'dart:html';
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:cchs_football_stats/models/game.dart';
@@ -91,6 +92,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(
                     color: Color.fromARGB(192, 224, 9, 9), fontSize: 30))),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(size: 12.0),
+      ),
       //
     );
   }
@@ -147,6 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void makePlay(List<Data?> data, int gameIndex, int seasonIndex) {
     Play play = Play();
+
     seasons[seasonIndex].games[gameIndex].plays.add(play);
   }
 }
