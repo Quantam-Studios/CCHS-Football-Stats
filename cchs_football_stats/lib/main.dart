@@ -1,6 +1,8 @@
 // General
 import 'dart:io';
 import 'package:flutter/material.dart';
+// Page References
+import 'history_page.dart';
 // Side Bar
 import 'package:side_navigation/side_navigation.dart';
 // Class References
@@ -86,9 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // all pages should be separate scripts.
     List<Widget> views = const [
       // HISTORY
-      Center(
-        child: Text('History'),
-      ),
+      HistoryPage(),
       // PLAY BOOK
       Center(
         child: Text('Play Book'),
@@ -130,7 +130,8 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundColor: const Color(0xFF121b1f),
               togglerTheme: const SideNavigationBarTogglerTheme(
                   expandIconColor: Colors.grey, shrinkIconColor: Colors.grey),
-              itemTheme: SideNavigationBarItemTheme.standard(),
+              itemTheme: const SideNavigationBarItemTheme(
+                  selectedItemColor: Colors.white),
               dividerTheme: SideNavigationBarDividerTheme.standard(),
             ),
             onTap: (index) {
