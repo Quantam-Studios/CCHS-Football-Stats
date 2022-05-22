@@ -6,6 +6,10 @@ _fe_analyzer_shared
 2.12
 file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/_fe_analyzer_shared-31.0.0/
 file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/_fe_analyzer_shared-31.0.0/lib/
+accordion
+2.12
+file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/accordion-2.3.0/
+file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/accordion-2.3.0/lib/
 analyzer
 2.14
 file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/analyzer-2.8.0/
@@ -138,6 +142,10 @@ flutter_plugin_android_lifecycle
 2.12
 file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.6/
 file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.6/lib/
+get
+2.15
+file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.6.4/
+file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.6.4/lib/
 glob
 2.14
 file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/glob-2.0.2/
@@ -266,6 +274,10 @@ pubspec_parse
 2.14
 file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/pubspec_parse-1.2.0/
 file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/pubspec_parse-1.2.0/lib/
+scroll_to_index
+2.12
+file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/scroll_to_index-2.1.1/
+file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/scroll_to_index-2.1.1/lib/
 shelf
 2.12
 file:///C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/shelf-1.2.0/
