@@ -17,7 +17,7 @@ class SeasonAdapter extends TypeAdapter<Season> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Season()
-      ..years = fields[0] as String
+      ..years = fields[0] as int
       ..games = (fields[1] as List).cast<Game>()
       ..totalGames = fields[2] as int;
   }

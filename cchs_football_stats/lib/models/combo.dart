@@ -8,28 +8,27 @@ part 'combo.g.dart';
 class Combo extends HiveObject {
   // Name
   @HiveField(0)
-  late String play;
+  late String? play;
   // Motion
   @HiveField(1)
   late String? motion;
   // Formation
   @HiveField(2)
-  late String formation;
+  late String? formation;
   // Personnel
   // rb = total running backs on field
   // te = total tight ends on field
   @HiveField(3)
-  late int rb;
+  late int? rb;
   @HiveField(4)
-  late int te;
-  // Efficient
-  // Y = efficient
-  // N = NOT efficient
+  late int? te;
   @HiveField(5)
-  late String efficient;
+  late bool? efficient;
   // Combo type (offense or defense)
   @HiveField(6)
-  late String comboType;
+  late bool? isOffense;
+  //Play Number
+  late int? playNumber;
   // Direction
   // @HiveField(some Int)
   // late String direction;

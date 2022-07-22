@@ -27,5 +27,8 @@ class Game extends HiveObject {
   late int totalDefPlays;
   // Total Plays
   @HiveField(5)
-  late int totalPlays;
+  late int? totalPlays;
+  //Date Game Was Played
+  @HiveField(6)
+  late DateTime date;
 }

@@ -22,13 +22,14 @@ class GameAdapter extends TypeAdapter<Game> {
       ..away = fields[2] as bool
       ..totalOffPlays = fields[3] as int
       ..totalDefPlays = fields[4] as int
-      ..totalPlays = fields[5] as int;
+      ..totalPlays = fields[5] as int?
+      ..date = fields[6] as DateTime;
   }
 
   @override
   void write(BinaryWriter writer, Game obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.opponent)
       ..writeByte(1)
@@ -40,7 +41,9 @@ class GameAdapter extends TypeAdapter<Game> {
       ..writeByte(4)
       ..write(obj.totalDefPlays)
       ..writeByte(5)
-      ..write(obj.totalPlays);
+      ..write(obj.totalPlays)
+      ..writeByte(6)
+      ..write(obj.date);
   }
 
   @override

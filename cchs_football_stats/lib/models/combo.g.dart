@@ -17,13 +17,13 @@ class ComboAdapter extends TypeAdapter<Combo> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Combo()
-      ..play = fields[0] as String
+      ..play = fields[0] as String?
       ..motion = fields[1] as String?
-      ..formation = fields[2] as String
-      ..rb = fields[3] as int
-      ..te = fields[4] as int
-      ..efficient = fields[5] as String
-      ..comboType = fields[6] as String;
+      ..formation = fields[2] as String?
+      ..rb = fields[3] as int?
+      ..te = fields[4] as int?
+      ..efficient = fields[5] as bool?
+      ..isOffense = fields[6] as bool?;
   }
 
   @override
@@ -43,7 +43,7 @@ class ComboAdapter extends TypeAdapter<Combo> {
       ..writeByte(5)
       ..write(obj.efficient)
       ..writeByte(6)
-      ..write(obj.comboType);
+      ..write(obj.isOffense);
   }
 
   @override
