@@ -74,7 +74,7 @@ pickFile() async {
       String totalPlaysStirng = totalPlaysInt.toString();
       //MAKES IT THE TOTAL NUMBER OF PLAYS
       game.totalPlays = int.parse(totalPlaysStirng);
-      for (int x = 0; x < excelSheet.length; x++) {
+      for (int x = 1; x < excelSheet.length; x++) {
         makePlay(excelSheet[x], currentGameIndex, currentSeasonIndex);
       }
     }

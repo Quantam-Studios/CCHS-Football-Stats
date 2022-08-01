@@ -4,5 +4,6 @@ C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats
 C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
 C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
 C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows/runner/Debug/data/flutter_assets/NOTICES
 C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
 C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
