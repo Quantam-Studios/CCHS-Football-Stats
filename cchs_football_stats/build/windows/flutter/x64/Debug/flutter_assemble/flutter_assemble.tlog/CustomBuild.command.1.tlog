@@ -1,6 +1,6 @@
-^C:\USERS\MINEC\DOCUMENTS\FOOTBALLSTATAPP\MAINAPP\CCHS-FOOTBALL-STATS\CCHS_FOOTBALL_STATS\BUILD\WINDOWS\CMAKEFILES\8DA7DA088F8F5210A700111107064B2E\FLUTTER_WINDOWS.DLL.RULE
+^C:\USERS\ANIMA\ONEDRIVE\DOCUMENTS\GITHUB\CCHS-FOOTBALL-STATS\CCHS_FOOTBALL_STATS\BUILD\WINDOWS\CMAKEFILES\25E3EE70F40E158C760D46082A12F2A4\FLUTTER_WINDOWS.DLL.RULE
 setlocal
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\tools\flutter PROJECT_DIR=C:\Users\minec\Documents\FootballStatApp\MainApp\CCHS-Football-Stats\cchs_football_stats FLUTTER_ROOT=C:\tools\flutter FLUTTER_EPHEMERAL_DIR=C:\Users\minec\Documents\FootballStatApp\MainApp\CCHS-Football-Stats\cchs_football_stats\windows\flutter\ephemeral PROJECT_DIR=C:\Users\minec\Documents\FootballStatApp\MainApp\CCHS-Football-Stats\cchs_football_stats FLUTTER_TARGET=C:\Users\minec\Documents\FootballStatApp\MainApp\CCHS-Football-Stats\cchs_football_stats\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\minec\Documents\FootballStatApp\MainApp\CCHS-Football-Stats\cchs_football_stats\.dart_tool\package_config.json C:/tools/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\Users\anima\OneDrive\Documents\flutter PROJECT_DIR=C:\Users\anima\OneDrive\Documents\GitHub\CCHS-Football-Stats\cchs_football_stats FLUTTER_ROOT=C:\Users\anima\OneDrive\Documents\flutter FLUTTER_EPHEMERAL_DIR=C:\Users\anima\OneDrive\Documents\GitHub\CCHS-Football-Stats\cchs_football_stats\windows\flutter\ephemeral PROJECT_DIR=C:\Users\anima\OneDrive\Documents\GitHub\CCHS-Football-Stats\cchs_football_stats FLUTTER_TARGET=C:\Users\anima\OneDrive\Documents\GitHub\CCHS-Football-Stats\cchs_football_stats\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\anima\OneDrive\Documents\GitHub\CCHS-Football-Stats\cchs_football_stats\.dart_tool\package_config.json C:/Users/anima/OneDrive/Documents/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -8,7 +8,7 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\MINEC\DOCUMENTS\FOOTBALLSTATAPP\MAINAPP\CCHS-FOOTBALL-STATS\CCHS_FOOTBALL_STATS\BUILD\WINDOWS\CMAKEFILES\DDB581C53A53B0E47744B2FC611946F5\FLUTTER_ASSEMBLE.RULE
+^C:\USERS\ANIMA\ONEDRIVE\DOCUMENTS\GITHUB\CCHS-FOOTBALL-STATS\CCHS_FOOTBALL_STATS\BUILD\WINDOWS\CMAKEFILES\CDB33E4A3572C0E877FCF57B33B8635E\FLUTTER_ASSEMBLE.RULE
 setlocal
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -16,9 +16,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\MINEC\DOCUMENTS\FOOTBALLSTATAPP\MAINAPP\CCHS-FOOTBALL-STATS\CCHS_FOOTBALL_STATS\WINDOWS\FLUTTER\CMAKELISTS.TXT
+^C:\USERS\ANIMA\ONEDRIVE\DOCUMENTS\GITHUB\CCHS-FOOTBALL-STATS\CCHS_FOOTBALL_STATS\WINDOWS\FLUTTER\CMAKELISTS.TXT
 setlocal
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/windows -BC:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/build/windows --check-stamp-file C:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/build/windows/flutter/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/windows -BC:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows --check-stamp-file C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows/flutter/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

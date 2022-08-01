@@ -9,7 +9,7 @@ part 'season.g.dart';
 class Season extends HiveObject {
   // Name
   @HiveField(0)
-  late String years;
+  late int years;
   // Games
   // this holds all relevant games in the season
   @HiveField(1)
