@@ -1,6 +1,7 @@
 import 'dart:ffi';
 import 'dart:io';
 import 'package:cchs_football_stats/newGamePage.dart';
+import 'package:cchs_football_stats/playbook_page.dart';
 import 'package:flutter/material.dart';
 // Page References
 import 'history_page.dart';
@@ -11,6 +12,7 @@ import 'package:side_navigation/side_navigation.dart';
 import './models/game.dart';
 import './models/season.dart';
 import './models/combo.dart';
+import 'playbook_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -69,13 +71,11 @@ class _MyHomePageState extends State<MyHomePage> {
     // PAGES
     // only a list of page classes.
     // all pages should be separate scripts.
-    List<Widget> views = const [
+    List<Widget> views = [
       // HISTORY
       HistoryPage(),
       // PLAY BOOK
-      Center(
-        child: Text('Play Book'),
-      ),
+      PlayBook(),
       // PREDICTIONS
       Center(
         child: Text('Predictions'),

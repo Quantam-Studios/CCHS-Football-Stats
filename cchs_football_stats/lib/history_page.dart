@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 // Accordions
 import 'package:accordion/accordion.dart';
 import 'package:accordion/controllers.dart';
+
 import 'addFileFunction.dart';
 import 'main.dart';
 import 'models/game.dart';
@@ -75,8 +76,17 @@ List<Accordion> makeSeasonList() {
         AccordionSection(
             header: Text(seasons[x].years.toString()),
             content: Accordion(
+                maxOpenSections: 1,
+                contentBackgroundColor: const Color(0xFF39545e),
+                headerBackgroundColor: const Color(0xFF5a8696),
+                headerBackgroundColorOpened: const Color(0xFF8fb0bc),
+                headerPadding:
+                    const EdgeInsets.symmetric(vertical: 7, horizontal: 15),
                 children: makeGameList(seasons[x]),
-                header: Text(seasons[x].years.toString())))
+                header: Row(children: [
+                  const Icon(Icons.sports_football_sharp),
+                  Text(seasons[x].years.toString())
+                ])))
       ], //makeGameList(seasons[x]),
     ));
   }
@@ -84,38 +94,101 @@ List<Accordion> makeSeasonList() {
 }
 
 List<AccordionSection> makeGameList(Season season) {
+  const _headerStyle = TextStyle(
+      color: Color(0xffffffff), fontSize: 15, fontWeight: FontWeight.bold);
+  const _contentStyleHeader =
+      TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w700);
   List<AccordionSection> section = <AccordionSection>[];
   for (int x = 0; x < season.games.length; x++) {
     section.add(
       AccordionSection(
           header: Row(children: const [
             Icon(Icons.sports_football_rounded),
-            Text("Opponent")
+            Text("Opponent", style: _headerStyle)
           ]),
-          contentBackgroundColor: Color.fromARGB(255, 33, 243, 166),
-          headerBackgroundColor: Color.fromARGB(255, 9, 112, 55),
-          content: DataTable(columns: const [
-            DataColumn(label: Text("Combo #")),
-            DataColumn(label: Text("Type")),
-            DataColumn(label: Text("Motion")),
-            DataColumn(label: Text("O/D")),
-            DataColumn(label: Text("Efficient"))
-          ], rows: makePlays(season.games[x]))),
+          content: DataTable(
+              sortAscending: true,
+              sortColumnIndex: 1,
+              dataRowHeight: 40,
+              showBottomBorder: false,
+              columns: const [
+                DataColumn(
+                    label: Text(
+                  "Combo #",
+                  style: _contentStyleHeader,
+                )),
+                DataColumn(
+                    label: Text(
+                  "Type",
+                  style: _contentStyleHeader,
+                )),
+                DataColumn(
+                    label: Text(
+                  "Motion",
+                  style: _contentStyleHeader,
+                )),
+                DataColumn(
+                    label: Text(
+                  "Te",
+                  style: _contentStyleHeader,
+                )),
+                DataColumn(
+                    label: Text(
+                  "RB",
+                  style: _contentStyleHeader,
+                )),
+                DataColumn(
+                    label: Text(
+                  "O/D",
+                  style: _contentStyleHeader,
+                )),
+                DataColumn(
+                    label: Text(
+                  "Efficient",
+                  style: _contentStyleHeader,
+                ))
+              ],
+              rows: makePlays(season.games[x].combos))),
     );
   }
   return section;
 }
 
-List<DataRow> makePlays(Game game) {
+List<DataRow> makePlays(List<Combo> combos) {
+  const _contentStyle = TextStyle(
+      color: Colors.white70, fontSize: 14, fontWeight: FontWeight.normal);
   List<DataRow> plays = <DataRow>[];
-  for (int x = 0; x < game.combos.length; x++) {
-    Combo combo = game.combos[x];
+  for (int x = 0; x < combos.length; x++) {
+    Combo combo = combos[x];
     plays.add(DataRow(cells: [
-      DataCell(Text(combo.playNumber.toString())),
-      DataCell(Text(combo.play.toString())),
-      DataCell(Text("")),
-      DataCell(Text(combo.isOffense.toString())),
-      DataCell(Text(combo.efficient.toString())),
+      DataCell(Text(
+        combo.playNumber.toString(),
+        style: _contentStyle,
+      )),
+      DataCell(Text(
+        combo.play.toString(),
+        style: _contentStyle,
+      )),
+      DataCell(Text(
+        "",
+        style: _contentStyle,
+      )),
+      DataCell(Text(
+        "combo.te.toString()",
+        style: _contentStyle,
+      )),
+      DataCell(Text(
+        "combo.rb.toString()",
+        style: _contentStyle,
+      )),
+      DataCell(Text(
+        combo.isOffense.toString(),
+        style: _contentStyle,
+      )),
+      DataCell(Text(
+        combo.efficient.toString(),
+        style: _contentStyle,
+      )),
     ]));
   }
   return plays;
