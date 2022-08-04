@@ -1,65 +1,65 @@
-//General Imports
-import 'dart:math';
-import 'package:cchs_football_stats/addFileFunction.dart';
-import 'package:cchs_football_stats/models/season.dart';
+// General
 import 'package:flutter/material.dart';
-//Local Files
 import 'addFileFunction.dart';
 import 'main.dart';
+// Models
 import 'models/game.dart';
 import 'models/combo.dart';
+// Pages
 import 'history_page.dart';
-//Accordions
+// Accordions
 import 'package:accordion/accordion.dart';
 import 'package:accordion/controllers.dart';
 
 class PlayBook extends StatelessWidget {
+  const PlayBook({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xFF172226),
-        body: Accordion(
-            maxOpenSections: 2,
-            headerBackgroundColorOpened: const Color(0xFF10181b),
-            headerBackgroundColor: const Color(0xFF0b1113),
-            headerPadding:
-                const EdgeInsets.symmetric(vertical: 7, horizontal: 15),
-            sectionOpeningHapticFeedback: SectionHapticFeedback.heavy,
-            sectionClosingHapticFeedback: SectionHapticFeedback.light,
-            contentBackgroundColor: const Color(0xFF172226),
-            contentBorderColor: Colors.grey,
-            children: [
-              AccordionSection(
-                header: Row(
-                  children: const [Text("Breakdown")],
-                  mainAxisAlignment: MainAxisAlignment.center,
-                ),
-                content: Accordion(children: [
-                  AccordionSection(
-                      header: Row(children: [
-                        Text("Rows, " +
-                            (totalPlays()[0] / totalPlaysCount() * 100)
-                                .toString()
-                                .split(".")[0] +
-                            "%")
-                      ]),
-                      contentBackgroundColor:
-                          const Color.fromARGB(255, 33, 243, 166),
-                      headerBackgroundColor:
-                          const Color.fromARGB(255, 9, 112, 55),
-                      content: DataTable(columns: const [
-                        DataColumn(label: Text("Combo #")),
-                        DataColumn(label: Text("Type")),
-                        DataColumn(label: Text("Motion")),
-                        DataColumn(label: Text("O/D")),
-                        DataColumn(label: Text("Efficient"))
-                      ], rows: makePlays(totalPlays()[2][0])))
-                ]),
-              )
-            ]));
-
-    // TODO: implement build
-    throw UnimplementedError();
+      backgroundColor: const Color(0xFF172226),
+      body: Accordion(
+        maxOpenSections: 2,
+        headerBackgroundColorOpened: const Color(0xFF10181b),
+        headerBackgroundColor: const Color(0xFF0b1113),
+        headerPadding: const EdgeInsets.symmetric(vertical: 7, horizontal: 15),
+        sectionOpeningHapticFeedback: SectionHapticFeedback.heavy,
+        sectionClosingHapticFeedback: SectionHapticFeedback.light,
+        contentBackgroundColor: const Color(0xFF172226),
+        contentBorderColor: Colors.grey,
+        children: [
+          AccordionSection(
+            header: Row(
+              children: const [Text("Breakdown")],
+              mainAxisAlignment: MainAxisAlignment.center,
+            ),
+            content: Accordion(
+              children: [
+                AccordionSection(
+                    header: Row(children: [
+                      Text("Rows, " +
+                          (totalPlays()[0] / totalPlaysCount() * 100)
+                              .toString()
+                              .split(".")[0] +
+                          "%")
+                    ]),
+                    contentBackgroundColor:
+                        const Color.fromARGB(255, 33, 243, 166),
+                    headerBackgroundColor:
+                        const Color.fromARGB(255, 9, 112, 55),
+                    content: DataTable(columns: const [
+                      DataColumn(label: Text("Combo #")),
+                      DataColumn(label: Text("Type")),
+                      DataColumn(label: Text("Motion")),
+                      DataColumn(label: Text("O/D")),
+                      DataColumn(label: Text("Efficient"))
+                    ], rows: makeCombos(totalPlays()[2][0])))
+              ],
+            ),
+          )
+        ],
+      ),
+    );
   }
 
   totalPlays() {

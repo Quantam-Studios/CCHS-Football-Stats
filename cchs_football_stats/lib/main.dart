@@ -1,5 +1,4 @@
-import 'dart:ffi';
-import 'dart:io';
+// General
 import 'package:cchs_football_stats/newGamePage.dart';
 import 'package:cchs_football_stats/playbook_page.dart';
 import 'package:flutter/material.dart';
@@ -8,13 +7,32 @@ import 'history_page.dart';
 import 'newGamePage.dart';
 // Side Bar
 import 'package:side_navigation/side_navigation.dart';
-// Class References
-import './models/game.dart';
-import './models/season.dart';
-import './models/combo.dart';
-import 'playbook_page.dart';
+// Hive Database
+import 'package:hive_flutter/hive_flutter.dart';
+// Hive Models
+import 'package:cchs_football_stats/models/combo.dart';
+import 'package:cchs_football_stats/models/game.dart';
+import 'package:cchs_football_stats/models/season.dart';
+import 'package:cchs_football_stats/models/allTimeStats.dart';
 
-void main() {
+Future main() async {
+  // Ensure flutter is ready
+  WidgetsFlutterBinding.ensureInitialized();
+  // Hive Initialization
+  await Hive.initFlutter();
+  // Combo
+  Hive.registerAdapter(ComboAdapter());
+  await Hive.openBox<Combo>('combos');
+  // Game
+  Hive.registerAdapter(GameAdapter());
+  await Hive.openBox<Game>('games');
+  // Season
+  Hive.registerAdapter(SeasonAdapter());
+  await Hive.openBox<Season>('seasons');
+  // All Time Stats
+  Hive.registerAdapter(AllTimeStatsAdapter());
+  await Hive.openBox<AllTimeStats>('allTimeStats');
+
   runApp(const MyApp());
 }
 
@@ -73,15 +91,15 @@ class _MyHomePageState extends State<MyHomePage> {
     // all pages should be separate scripts.
     List<Widget> views = [
       // HISTORY
-      HistoryPage(),
+      const HistoryPage(),
       // PLAY BOOK
       PlayBook(),
       // PREDICTIONS
-      Center(
+      const Center(
         child: Text('Predictions'),
       ),
       //NEW GAME BUTTON
-      NewGameButtonPage()
+      const NewGameButtonPage()
     ];
 
     return Scaffold(

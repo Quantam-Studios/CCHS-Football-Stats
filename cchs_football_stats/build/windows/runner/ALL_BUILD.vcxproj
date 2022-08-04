@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
@@ -18,10 +18,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8D8F8427-0CE2-381C-9754-CCD7BFCEF2DD}</ProjectGuid>
+    <ProjectGuid>{11E0A31C-B40A-3D97-895B-D88B67B9E75A}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
-    <Platform>x64</Platform>
     <Platform>x64</Platform>
     <ProjectName>ALL_BUILD</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
@@ -30,17 +29,17 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -86,11 +85,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\anima\OneDrive\Documents\GitHub\CCHS-Football-Stats\cchs_football_stats\windows\runner\CMakeLists.txt">
-      <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/windows/runner/CMakeLists.txt</Message>
+    <CustomBuild Include="C:\Users\minec\Documents\FootballStatApp\MainApp\CCHS-Football-Stats\cchs_football_stats\windows\runner\CMakeLists.txt">
+      <StdOutEncoding>UTF-8</StdOutEncoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/windows/runner/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/windows -BC:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows --check-stamp-file C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows/runner/CMakeFiles/generate.stamp
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/windows -BC:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/build/windows --check-stamp-file C:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/build/windows/runner/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -99,11 +98,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\anima\OneDrive\Documents\GitHub\CCHS-Football-Stats\cchs_football_stats\build\windows\runner\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\minec\Documents\FootballStatApp\MainApp\CCHS-Football-Stats\cchs_football_stats\build\windows\runner\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/windows/runner/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule C:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/windows/runner/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/windows -BC:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows --check-stamp-file C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows/runner/CMakeFiles/generate.stamp
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/windows -BC:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/build/windows --check-stamp-file C:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/build/windows/runner/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -112,11 +111,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\anima\OneDrive\Documents\GitHub\CCHS-Football-Stats\cchs_football_stats\build\windows\runner\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\minec\Documents\FootballStatApp\MainApp\CCHS-Football-Stats\cchs_football_stats\build\windows\runner\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/windows/runner/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/windows/runner/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/windows -BC:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows --check-stamp-file C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/build/windows/runner/CMakeFiles/generate.stamp
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/windows -BC:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/build/windows --check-stamp-file C:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/build/windows/runner/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -125,21 +124,21 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\anima\OneDrive\Documents\GitHub\CCHS-Football-Stats\cchs_football_stats\build\windows\runner\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\minec\Documents\FootballStatApp\MainApp\CCHS-Football-Stats\cchs_football_stats\build\windows\runner\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\anima\OneDrive\Documents\GitHub\CCHS-Football-Stats\cchs_football_stats\build\windows\ZERO_CHECK.vcxproj">
-      <Project>{918E185D-4B89-3CB1-8899-5553C9F12B9A}</Project>
+    <ProjectReference Include="C:\Users\minec\Documents\FootballStatApp\MainApp\CCHS-Football-Stats\cchs_football_stats\build\windows\ZERO_CHECK.vcxproj">
+      <Project>{340241C1-ADD7-30CD-9B99-E9A768D73BE4}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\anima\OneDrive\Documents\GitHub\CCHS-Football-Stats\cchs_football_stats\build\windows\runner\cchs_football_stats.vcxproj">
-      <Project>{01EEF846-0FBA-3829-BD05-AD47DEC4FADA}</Project>
+    <ProjectReference Include="C:\Users\minec\Documents\FootballStatApp\MainApp\CCHS-Football-Stats\cchs_football_stats\build\windows\runner\cchs_football_stats.vcxproj">
+      <Project>{4CEE02E4-331B-3A0B-A910-80A1F559736B}</Project>
       <Name>cchs_football_stats</Name>
     </ProjectReference>
   </ItemGroup>

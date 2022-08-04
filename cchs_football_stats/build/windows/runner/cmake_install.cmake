@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/anima/OneDrive/Documents/GitHub/CCHS-Football-Stats/cchs_football_stats/windows/runner
+# Install script for directory: C:/Users/minec/Documents/FootballStatApp/MainApp/CCHS-Football-Stats/cchs_football_stats/windows/runner
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

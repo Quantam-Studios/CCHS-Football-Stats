@@ -1,17 +1,16 @@
-import 'dart:ffi';
+// General
 import 'dart:io';
-import 'package:cchs_football_stats/newGamePage.dart';
-import 'package:flutter/material.dart';
-
-//EXCEL READING
+import './main.dart';
+// Excel Reading
 import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'dart:typed_data';
-//MODEL FILES
+// Hive Models
 import './models/game.dart';
 import './models/season.dart';
 import './models/combo.dart';
-import './main.dart';
+// Hive DataBase
+import 'package:cchs_football_stats/helper_scripts/boxes.dart';
 
 pickFile() async {
   FilePickerResult? file = await FilePicker.platform.pickFiles(
@@ -60,6 +59,7 @@ pickFile() async {
       seasons.add(season);
       currentSeasonIndex = seasons.length - 1;
       season.games = [];
+      addSeason(season);
     }
     print(currentSeasonIndex);
     seasons[currentSeasonIndex].games.add(game);
@@ -78,11 +78,11 @@ pickFile() async {
         makePlay(excelSheet[x], currentGameIndex, currentSeasonIndex);
       }
     }
+    addGame(game);
   }
 }
 
 void makePlay(List<Data?> data, int gameIndex, int seasonIndex) {
-  //print(data);
   //MAKES A NEW COMBO
   Combo combo = Combo();
   Game thisGame = seasons[seasonIndex].games[gameIndex];
@@ -117,15 +117,57 @@ void makePlay(List<Data?> data, int gameIndex, int seasonIndex) {
   thisGame.combos.add(combo);
 }
 
+// GET CURRENT SEASON
+// returns a seasons index or -1 if it doesn't exist yet.
 int getCurrentSeason(int date) {
-  if (seasons.isNotEmpty) {
-    for (int x = 0; x < seasons.length; x++) {
+  if (Boxes.getSeasons().isNotEmpty) {
+    for (int x = 0; x < Boxes.getSeasons().length; x++) {
       int year = seasons[x].years;
       if (date == year) {
         return x;
       }
     }
   }
-
   return -1;
+}
+
+// HIVE FUNCTIONALITY
+// the following are helper functions to save data hive backend
+
+// Add new game to hive
+Future addGame(Game newGame) async {
+  // IMPORTANT: (TEMP) the flollowing lines is needed to initialize the unknown data.
+  newGame.opponent = '';
+  newGame.away = true;
+  newGame.totalDefPlays = 0;
+  newGame.totalOffPlays = 0;
+  newGame.totalPlays = 0;
+  for (int x = 0; x < newGame.combos.length; x++) {
+    newGame.combos[x].motion = '';
+    newGame.combos[x].formation = '';
+    newGame.combos[x].rb = 0;
+    newGame.combos[x].te = 0;
+  }
+
+// -----------------------------------------------------------------
+
+  // Transfer object types to hive readable
+  // Add new game
+  // Save to local storage
+  final box = Boxes.getGames();
+  box.add(newGame);
+}
+
+// Add new season to hive
+Future addSeason(Season newSeason) async {
+  // IMPORTANT: (TEMP) the flollowing lines is needed to initialize the unknown data.
+  newSeason.totalGames = 0;
+
+// -----------------------------------------------------------------
+
+  // Transfer object types to hive readable
+  // Add new season
+  // Save to local storage
+  final box = Boxes.getSeasons();
+  box.add(newSeason);
 }
