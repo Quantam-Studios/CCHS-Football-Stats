@@ -16,6 +16,18 @@ void deleteSeasons() {
 }
 
 // Delete all games in a season
-void deleteGames(Season season) {
+void deleteSeasonGames(Season season) {
   Boxes.getSeasons().get(season)?.games = [];
+}
+
+// Delete all games in seasons based on a list of years
+void deleteGames(List<int> seasonYears) {
+  List<int> yearsNotFound = seasonYears;
+  for (Season season in Boxes.getSeasons().values) {
+    for (int x = 0; x < yearsNotFound.length && yearsNotFound.isNotEmpty; x++) {
+      if (season.years == yearsNotFound[x]) {
+        season.games = [];
+      }
+    }
+  }
 }

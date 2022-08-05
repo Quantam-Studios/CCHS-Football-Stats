@@ -10,6 +10,8 @@ import 'models/combo.dart';
 // Hive DataBase
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:cchs_football_stats/helper_scripts/boxes.dart';
+// Custom Debugging
+import 'helper_scripts/customDebugging.dart';
 
 class HistoryPage extends StatefulWidget {
   const HistoryPage({Key? key}) : super(key: key);
@@ -150,47 +152,51 @@ Widget buildGame(BuildContext context, Game gameInfo, int index) {
     contentBorderColor: Colors.grey,
     children: [
       AccordionSection(
-        header: Row(children: const [
-          Icon(Icons.sports_football_rounded),
-          Text("Opponent", style: _headerStyle)
+        header: Row(children: [
+          const Icon(
+            Icons.sports_football_rounded,
+            color: Colors.white,
+          ),
+          Text("Opponent ${gameInfo.date.toIso8601String().substring(0, 10)}",
+              style: _headerStyle)
         ]),
         content: DataTable(
           sortAscending: true,
           sortColumnIndex: 1,
           dataRowHeight: 40,
           showBottomBorder: false,
-          columns: const [
+          columns: [
             DataColumn(
                 label: Text(
-              "Combo #",
+              "Combo # of ${gameInfo.totalPlays}",
               style: _contentStyleHeader,
             )),
-            DataColumn(
+            const DataColumn(
                 label: Text(
               "Type",
               style: _contentStyleHeader,
             )),
-            DataColumn(
+            const DataColumn(
                 label: Text(
               "Motion",
               style: _contentStyleHeader,
             )),
-            DataColumn(
+            const DataColumn(
                 label: Text(
               "Te",
               style: _contentStyleHeader,
             )),
-            DataColumn(
+            const DataColumn(
                 label: Text(
               "RB",
               style: _contentStyleHeader,
             )),
-            DataColumn(
+            const DataColumn(
                 label: Text(
               "O/D",
               style: _contentStyleHeader,
             )),
-            DataColumn(
+            const DataColumn(
                 label: Text(
               "Efficient",
               style: _contentStyleHeader,

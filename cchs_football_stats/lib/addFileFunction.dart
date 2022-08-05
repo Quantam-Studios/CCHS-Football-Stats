@@ -56,14 +56,13 @@ pickFile() async {
     if (currentSeasonIndex == -1) {
       Season season = Season();
       season.years = year;
-      seasons.add(season);
-      currentSeasonIndex = seasons.length - 1;
       season.games = [];
       addSeason(season);
     }
     print(currentSeasonIndex);
-    seasons[currentSeasonIndex].games.add(game);
-    int currentGameIndex = seasons[currentSeasonIndex].games.indexOf(game);
+    Boxes.getSeasons().getAt(currentSeasonIndex)!.games.add(game);
+    int currentGameIndex =
+        Boxes.getSeasons().getAt(currentSeasonIndex)!.games.indexOf(game);
     //print(seasons);
     if (theByteCode != null) {
       Excel excelFile = Excel.decodeBytes(theByteCode);
@@ -85,7 +84,7 @@ pickFile() async {
 void makePlay(List<Data?> data, int gameIndex, int seasonIndex) {
   //MAKES A NEW COMBO
   Combo combo = Combo();
-  Game thisGame = seasons[seasonIndex].games[gameIndex];
+  Game thisGame = Boxes.getSeasons().getAt(seasonIndex)!.games[gameIndex];
   //SETS THE COMBO PLAY
   combo.play = data[8]?.value;
   //SETS THE COMBO TYPE FROM THE VALUE ON THE SPREADSHEET
@@ -122,7 +121,7 @@ void makePlay(List<Data?> data, int gameIndex, int seasonIndex) {
 int getCurrentSeason(int date) {
   if (Boxes.getSeasons().isNotEmpty) {
     for (int x = 0; x < Boxes.getSeasons().length; x++) {
-      int year = seasons[x].years;
+      int year = Boxes.getSeasons().getAt(x)!.years;
       if (date == year) {
         return x;
       }
@@ -141,12 +140,12 @@ Future addGame(Game newGame) async {
   newGame.away = true;
   newGame.totalDefPlays = 0;
   newGame.totalOffPlays = 0;
-  newGame.totalPlays = 0;
   for (int x = 0; x < newGame.combos.length; x++) {
     newGame.combos[x].motion = '';
     newGame.combos[x].formation = '';
     newGame.combos[x].rb = 0;
     newGame.combos[x].te = 0;
+    newGame.totalPlays = x;
   }
 
 // -----------------------------------------------------------------
